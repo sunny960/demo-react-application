@@ -11,7 +11,7 @@ const Container = styled(Column)`
   //height: 1283px;
   height: 400px;
   //background: #F4EDDD;
-  //background: url('/images/invest_bg_image.svg');
+  //background: url('/demo-react-application/images/invest_bg_image.svg');
   //mix-blend-mode: color-dodge;
   justify-content: center;
   align-items: center;

@@ -11,7 +11,7 @@ const Column = styled.div`
 `
 const Container = styled(Row)`
   width: 100%;
-  background: url('/images/become_part_of_fitness_bg_image.jpg');
+  background: url('/demo-react-application/images/become_part_of_fitness_bg_image.jpg');
   align-items: center;
   justify-content: center;
   max-height: 805px;
@@ -69,17 +69,17 @@ const BecomePartOfFitness = () => {
         <RightContainer>
             <FirstRowContainer>
                 <Column>
-                    <Icon1 src={'/images/fitness_1.jpg'}/>
+                    <Icon1 src={'/demo-react-application/images/fitness_1.jpg'}/>
                 </Column>
                 <Column>
-                    <Icon2 src={'/images/fitness_2.jpg'}/>
+                    <Icon2 src={'/demo-react-application/images/fitness_2.jpg'}/>
                 </Column> </FirstRowContainer>
             <SecondRowContainer>
                 <Column>
-                    <Icon3 src={'/images/fitness_3.jpg'}/>
+                    <Icon3 src={'/demo-react-application/images/fitness_3.jpg'}/>
                 </Column>
                 <Column>
-                    <Icon4 src={'/images/fitness_4.jpg'}/>
+                    <Icon4 src={'/demo-react-application/images/fitness_4.jpg'}/>
                 </Column>
             </SecondRowContainer>
         </RightContainer>

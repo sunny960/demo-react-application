@@ -77,14 +77,14 @@ const SocialIcon = styled.img`
   height: 24px;
 `
 const ContentContainer = styled(Column)`
-  background: url("/images/team_bg_image.svg");
+  background: url("/demo-react-application/images/team_bg_image.svg");
   height: 565px;
   max-height: 688px;
   align-items: center;
 `
 const list = [
     {
-        image: '/images/nilesh.jpg',
+        image: '/demo-react-application/images/nilesh.jpg',
         name: 'Nilesh Panvalkar',
         description: 'With more than 12 years of extensive experience in the fitness industry, Nilesh has the expertise to ensure you move better, perform better, and most importantly, feel better. He specialises in strength and functional training.',
         certificateInfo: 'Certification -  K11 Fitness Academy',
@@ -105,21 +105,21 @@ const list = [
         experienceInfo: 'Experience - 11 years.',
     },
     {
-        image: '/images/ravi_roy.jpg',
+        image: '/demo-react-application/images/ravi_roy.jpg',
         name: 'Ravi Roy',
         description: 'Ravi is a fitness enthusiast who specialises in HIIT and strength training. Through his training programs, he aims to help his clients enhance both aerobic and anaerobic fitness, burn more calories, and improve overall strength and endurance.',
         certificateInfo: 'Certification -  Personal trainer from K11, Cross fit level 1, black roll certified from the American College of Sports Medicine (ACSM).',
         experienceInfo: 'Experience - 10 years.',
     },
     {
-        image: '/images/amit_nalwade.jpg',
+        image: '/demo-react-application/images/amit_nalwade.jpg',
         name: 'Amit Nalawde',
         description: 'Amit is a professional MMA specialist who has competed in the national event 7 times. He motivates his clients to push their limits while embracing all that their body can do. He helps his clients perfect their technique and form to get the most power out of every punch. Additionally, he also has 1 year of experience in sports rehab training.',
         certificateInfo: 'Certification -  American College of Sports Medicine (ACSM) and MMA level 1&2.',
         experienceInfo: 'Experience - 5 years.',
     },
     {
-        image: '/images/darpan_image.jpg',
+        image: '/demo-react-application/images/darpan_image.jpg',
         name: 'Darpan Panchal',
         description: 'Darpan PanchalDarpan Panchal is a sucker for those who want to get rid of their unhealthy habits and live healthier lives. He motivates his clients with integrated fitness programs that fuel a healthy lifestyle and helps them achieve their goals.',
         certificateInfo: 'Certification -  American College of Sports Medicine (ACSM)',
@@ -136,14 +136,14 @@ const Details = (props) => {
                 <Description>{props?.userObj?.certificateInfo || ''}</Description>
                 <Description>{props?.userObj?.experienceInfo || ''}</Description>
                 <SocialIconContainer>
-                    <SocialIcon src={'/images/twiiter_icon.jpg'}/>
-                    <SocialIcon src={'/images/team_facebook_icon.jpg'}/>
-                    <SocialIcon src={'/images/team_instagram_icon.jpg'}/>
+                    <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'}/>
+                    <SocialIcon src={'/demo-react-application/images/team_facebook_icon.jpg'}/>
+                    <SocialIcon src={'/demo-react-application/images/team_instagram_icon.jpg'}/>
                 </SocialIconContainer>
             </ContentContainer>
         </LeftContainer>
         <RightContainer>
-            {/*<Icon src={'/images/darpan_panchal.svg'}/>*/}
+            {/*<Icon src={'/demo-react-application/images/darpan_panchal.svg'}/>*/}
             {props?.userObj?.image ? <Icon src={props?.userObj?.image || ''}/> : 'MISSING'}
         </RightContainer>
 

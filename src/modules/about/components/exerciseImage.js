@@ -12,7 +12,7 @@ const Column = styled.div`
 const Container = styled(Column)`
   width: 100%;
   height: 1038px;
-  background: url("/images/about_image.jpg");
+  background: url("/demo-react-application/images/about_image.jpg");
   align-items: center;
   justify-content: center;
 `

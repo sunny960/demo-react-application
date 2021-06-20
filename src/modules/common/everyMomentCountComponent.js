@@ -64,12 +64,12 @@ const EveryMomentCountComponent = () => {
             <Title>{'Every Moment Counts'}</Title>
             <Discription>{'Never let anything hamper your fitness journey. You can now get personalised fitness programs, easy access to skilled instructors, exclusive offers, and more. Download the ProSport app now!'}</Discription>
             <ImageContainer>
-                <PlayIcon src={'/images/iphone_play.jpg'}/>
-                <PlayIcon src={'/images/google_play.jpg'}/>
+                <PlayIcon src={'/demo-react-application/images/iphone_play.jpg'}/>
+                <PlayIcon src={'/demo-react-application/images/google_play.jpg'}/>
             </ImageContainer>
         </LeftContainer>
         <RightContainer>
-            <Icon src={"/images/phone_picture.svg"}/>
+            <Icon src={"/demo-react-application/images/phone_picture.svg"}/>
         </RightContainer>
 
     </Container>)

@@ -74,7 +74,7 @@ const VideoIcon = styled(Icon)`
 const HeaderMenuRow = (props) => {
     return (<HeaderContainer backgroundColor={props.backgroundColor || ''}>
         <HeaderImageContainer>
-            <HeaderIcon src="/images/pro_sport_icon.svg" onClick={() => history.push('/')}/>
+            <HeaderIcon src="/demo-react-application/images/pro_sport_icon.svg" onClick={() => history.push('/')}/>
         </HeaderImageContainer>
         <MenuContainer>
             <Item>{'Home'}</Item>
@@ -83,7 +83,7 @@ const HeaderMenuRow = (props) => {
             <Item>{'Contact'}</Item>
             <Item>
                 <SessionButton>
-                    <VideoIcon src="/images/video_icon.svg"/>
+                    <VideoIcon src="/demo-react-application/images/video_icon.svg"/>
                     <span>{'Session'}</span>
                 </SessionButton>
             </Item>

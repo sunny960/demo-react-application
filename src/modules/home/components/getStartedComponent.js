@@ -21,22 +21,22 @@ const ItemContainer = styled(Row)`
 `
 const list = [
     {
-        image: '/images/fitness_movenent.svg',
+        image: '/demo-react-application/images/fitness_movenent.svg',
         title: 'Join The Fitness Movement',
         description: 'Help people reach their fitness, health, and performance goals by blending cutting-edge equipment and world-class training.'
     },
     {
-        image: '/images/great_roi.svg',
+        image: '/demo-react-application/images/great_roi.svg',
         title: 'Great ROI',
         description: 'Receive exceptional growth opportunities and receive incredible Return on Investment by joining our fitness community.'
     },
     {
-        image: '/images/customer_experience.svg',
+        image: '/demo-react-application/images/customer_experience.svg',
         title: 'Unparalleled Customer Experience',
         description: 'Work in tandem with experts to create a fitness space designed to suit every training program and deliver a first-class customer experience.'
     },
     {
-        image: '/images/class_equipment.svg',
+        image: '/demo-react-application/images/class_equipment.svg',
         title: 'Best in Class Equipment',
         description: 'Build strength, speed, and agility of your clients using the latest and state of the art equipment and value-driven approach.'
     },

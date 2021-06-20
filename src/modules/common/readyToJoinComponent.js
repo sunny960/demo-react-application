@@ -170,9 +170,9 @@ const ReadyToJoinComponent = () => {
             '\n' +
             '+91 9004559955'}</Address>
             <SocialIconContainer>
-                <SocialIcon src={'/images/twiiter_icon.jpg'}/>
-                <SocialIcon src={'/images/facebook_icon.jpg'}/>
-                <SocialIcon src={'/images/instagram_icon.jpg'}/>
+                <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'}/>
+                <SocialIcon src={'/demo-react-application/images/facebook_icon.jpg'}/>
+                <SocialIcon src={'/demo-react-application/images/instagram_icon.jpg'}/>
             </SocialIconContainer>
         </RightContainer>
 

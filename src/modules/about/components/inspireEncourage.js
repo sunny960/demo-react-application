@@ -13,7 +13,7 @@ const Column = styled.div`
 const Container = styled(Column)`
   width: 100%;
   height: 648px;
-  background: url("/images/inspire_incourage_bg.jpg");
+  background: url("/demo-react-application/images/inspire_incourage_bg.jpg");
 `
 const Title = styled.span`
   font-family: Josefin Sans;
@@ -46,7 +46,7 @@ const InspireEncourage = () => {
                 <Title>{'EMPOWER. INSPIRE. ENCOURAGE. PROSPORT.'}</Title>
             </Column>
             <Column>
-                <Icon src={'/images/user_picture.svg'}/>
+                <Icon src={'/demo-react-application/images/user_picture.svg'}/>
             </Column>
         </ContentContainer>
     </Container>)

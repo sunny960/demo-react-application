@@ -59,16 +59,16 @@ const ContactInfo = () => {
         <InfoContainer>
             <ContactContainer>
                 <Row>
-                    <Icon src="/images/phone_icon.svg"/>
+                    <Icon src="/demo-react-application/images/phone_icon.svg"/>
                     <Text>{'+91 9004559955'}</Text>
                 </Row>
                 <Row>
-                    <MailIcon src="/images/mail_icon.svg"/>
+                    <MailIcon src="/demo-react-application/images/mail_icon.svg"/>
                     <MailText>{'hello@ProsportFitness.in'}</MailText>
                 </Row>
             </ContactContainer>
             <AddressContainer>
-                <LocationIcon src="/images/location_icon.svg"/>
+                <LocationIcon src="/demo-react-application/images/location_icon.svg"/>
                 <MailText>{'Claden Holm. TPS III, 15th Rd, Bandra West, Mumbai'}</MailText>
             </AddressContainer>
         </InfoContainer>

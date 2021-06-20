@@ -25,19 +25,19 @@ const ItemContainer = styled(Row)`
 `
 const list = [
     {
-        image: '/images/training_1st.svg',
+        image: '/demo-react-application/images/training_1st.svg',
         description: 'Train with the best instructors and fitness experts to increase strength and endurance.'
     },
     {
-        image: '/images/personal_trainer.svg',
+        image: '/demo-react-application/images/personal_trainer.svg',
         description: 'Achieve fitness and performance goals with custom programs led by dedicated instructors.'
     },
     {
-        image: '/images/physiotherpy.svg',
+        image: '/demo-react-application/images/physiotherpy.svg',
         description: 'Let experts help you restore function, reduce pain, improve healing, and prevent future injuries.'
     },
     {
-        image: '/images/nutristion.svg',
+        image: '/demo-react-application/images/nutristion.svg',
         description: 'Get personalised meal and snack plans that promote good health and overall performance.'
     },
 ]
