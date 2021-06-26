@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
+import {Link} from "react-scroll";
 
 const Row = styled.div`
   display: flex;
@@ -96,7 +97,7 @@ const Title = styled.span`
   padding: 129px 0 80px 0;
 `
 const OurFitnessProgramComponent = () => {
-    return (<Container>
+    return (<Container id={'fitnessProgram'}>
         <Title>{'Our Fitness Programs'}</Title>
         <ItemContainer>
             {list && list.map((obj, index) =>
@@ -106,7 +107,7 @@ const OurFitnessProgramComponent = () => {
                 </Item>)}
         </ItemContainer>
         <BtnContainer>
-            <FreeTrialButton>{'Free Trial'}</FreeTrialButton>
+            <FreeTrialButton><Link  to="readyToJoin" spy={true} smooth={true}>{'Free Trial'}</Link></FreeTrialButton>
         </BtnContainer>
     </Container>)
 

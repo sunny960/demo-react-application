@@ -75,6 +75,7 @@ const SocialIconContainer = styled(Row)`
 const SocialIcon = styled.img`
   max-width: 25px;
   height: 24px;
+  cursor: pointer;
 `
 const ContentContainer = styled(Column)`
   background: url("/demo-react-application/images/team_bg_image.svg");
@@ -136,9 +137,9 @@ const Details = (props) => {
                 <Description>{props?.userObj?.certificateInfo || ''}</Description>
                 <Description>{props?.userObj?.experienceInfo || ''}</Description>
                 <SocialIconContainer>
-                    <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'}/>
-                    <SocialIcon src={'/demo-react-application/images/team_facebook_icon.jpg'}/>
-                    <SocialIcon src={'/demo-react-application/images/team_instagram_icon.jpg'}/>
+                    <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'} onClick={()=>window.open('https://twitter.com/narendramodi?lang=en', '_blank')}/>
+                    <SocialIcon src={'/demo-react-application/images/team_facebook_icon.jpg'} onClick={()=>window.open('https://www.facebook.com/narendramodi/', '_blank')}/>
+                    <SocialIcon src={'/demo-react-application/images/team_instagram_icon.jpg'} onClick={()=>window.open('https://www.instagram.com/narendramodi/?hl=en', '_blank')}/>
                 </SocialIconContainer>
             </ContentContainer>
         </LeftContainer>

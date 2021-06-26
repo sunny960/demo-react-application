@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
+import {history} from "../../utils/history";
 
 const Row = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ const FooterIcon = styled.img`
   width: 202px;
   height: 96px;
   margin: 71px 0 62px 0;
+  cursor: pointer;
 `
 const Title = styled.span`
   font-family: Josefin Sans;
@@ -59,7 +61,7 @@ const MessageIcon = styled.img`
 `
 const Footer = () => {
     return (<Container>
-        <FooterIcon src={'/demo-react-application/images/footer_logo.svg'}/>
+        <FooterIcon src={'/demo-react-application/images/footer_logo.svg'} onClick={() => history.push('/')}/>
         <Title>{'© Prosportfitness 2021'}</Title>
         <ConditionContainer>
             <Tag href={'#'} target={'_blank'}>{'Privacy Policy'}</Tag>

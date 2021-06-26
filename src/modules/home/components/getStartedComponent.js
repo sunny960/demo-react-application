@@ -1,5 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
+import {Link} from 'react-scroll'
+
 
 const Row = styled.div`
   display: flex;
@@ -97,7 +99,7 @@ const BtnContainer = styled(Row)`
   z-index: 10000;
 `
 const GetStartedComponent = () => {
-    return (<Container>
+    return (<Container id="getStarted">
         <ItemContainer>
             {list && list.map((obj, index) =>
                 <Item>
@@ -107,7 +109,7 @@ const GetStartedComponent = () => {
                 </Item>)}
         </ItemContainer>
         <BtnContainer>
-            <StartButton>{'get started'}</StartButton>
+            <StartButton><Link  to="readyToJoin" spy={true} smooth={true}>{'get started'}</Link></StartButton>
         </BtnContainer>
     </Container>)
 

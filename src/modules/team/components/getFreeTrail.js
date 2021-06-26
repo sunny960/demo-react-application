@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-scroll";
 
 const Row = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const Button =styled.button`
 
 const GetFreeTrail =()=>{
     return(<Container>
-        <Button>{'Get Your Free Trial Now!'}</Button>
+        <Button><Link  to="readyToJoin" spy={true} smooth={true}>{'Get Your Free Trial Now!'}</Link></Button>
     </Container>)
 
 }

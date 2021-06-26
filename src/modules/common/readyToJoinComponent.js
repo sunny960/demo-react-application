@@ -70,6 +70,7 @@ const SocialIconContainer = styled(Row)`
 const SocialIcon = styled.img`
   max-width: 25px;
   height: 24px;
+  cursor: pointer;
 `
 const Title =styled.span`
   font-family: Josefin Sans;
@@ -157,7 +158,7 @@ const SignUpForm = ()=>{
 
 }
 const ReadyToJoinComponent = () => {
-    return (<Container>
+    return (<Container id="readyToJoin">
         <LeftContainer>
             <Title>{'Ready To Join The ProSport Community?'}</Title>
             <Content>{'Feel free to contact us and we will get back to you as soon as we can.'}</Content>
@@ -170,9 +171,9 @@ const ReadyToJoinComponent = () => {
             '\n' +
             '+91 9004559955'}</Address>
             <SocialIconContainer>
-                <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'}/>
-                <SocialIcon src={'/demo-react-application/images/facebook_icon.jpg'}/>
-                <SocialIcon src={'/demo-react-application/images/instagram_icon.jpg'}/>
+                <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'} onClick={()=>window.open('https://twitter.com/narendramodi?lang=en', '_blank')}/>
+                <SocialIcon src={'/demo-react-application/images/facebook_icon.jpg'} onClick={()=>window.open('https://www.facebook.com/narendramodi/', '_blank')}/>
+                <SocialIcon src={'/demo-react-application/images/instagram_icon.jpg'} onClick={()=>window.open('https://www.instagram.com/narendramodi/?hl=en', '_blank')}/>
             </SocialIconContainer>
         </RightContainer>
 

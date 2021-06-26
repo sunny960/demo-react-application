@@ -85,7 +85,7 @@ const Title = styled.span`
   padding: 145px 0 150px 0;
 `
 const MeetTheTeamComponent = () => {
-    return (<Container>
+    return (<Container id={'teamMeet'}>
         <Title>{'Meet the Team'}</Title>
         <ItemContainer>
             {list && list.map((obj, index) =>

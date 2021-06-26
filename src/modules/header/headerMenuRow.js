@@ -1,6 +1,7 @@
 import React from "react";
 import styled, {css} from "styled-components";
 import {history} from "../../utils/history";
+import {Link} from "react-scroll";
 
 const Row = styled.div`
   display: flex;
@@ -77,10 +78,10 @@ const HeaderMenuRow = (props) => {
             <HeaderIcon src="/demo-react-application/images/pro_sport_icon.svg" onClick={() => history.push('/')}/>
         </HeaderImageContainer>
         <MenuContainer>
-            <Item>{'Home'}</Item>
-            <Item>{'Programs'}</Item>
-            <Item onClick={() => history.push('/team')}>{'Trainers'}</Item>
-            <Item>{'Contact'}</Item>
+            <Item onClick={() => history.push('/')}>{'Home'}</Item>
+            <Item><Link  to="fitnessProgram" spy={true} smooth={true}>{'Programs'}</Link></Item>
+            <Item><Link  to="teamMeet" spy={true} smooth={true}>{'Trainers'}</Link></Item>
+            <Item><Link  to="readyToJoin" spy={true} smooth={true}>{'Contact'}</Link></Item>
             <Item>
                 <SessionButton>
                     <VideoIcon src="/demo-react-application/images/video_icon.svg"/>
