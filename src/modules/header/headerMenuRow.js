@@ -80,7 +80,8 @@ const HeaderMenuRow = (props) => {
         <MenuContainer>
             <Item onClick={() => history.push('/')}>{'Home'}</Item>
             <Item><Link  to="fitnessProgram" spy={true} smooth={true}>{'Programs'}</Link></Item>
-            <Item><Link  to="teamMeet" spy={true} smooth={true}>{'Trainers'}</Link></Item>
+            <Item onClick={() => history.push('/team')}>{'Trainers'}</Item>
+            {/*<Item><Link  to="teamMeet" spy={true} smooth={true}>{'Trainers'}</Link></Item>*/}
             <Item><Link  to="readyToJoin" spy={true} smooth={true}>{'Contact'}</Link></Item>
             <Item>
                 <SessionButton>

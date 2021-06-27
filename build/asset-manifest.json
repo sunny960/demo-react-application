@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/demo-react-application/static/css/main.162ea942.chunk.css",
-    "main.js": "/demo-react-application/static/js/main.64a2efa4.chunk.js",
-    "main.js.map": "/demo-react-application/static/js/main.64a2efa4.chunk.js.map",
+    "main.js": "/demo-react-application/static/js/main.a57da4a8.chunk.js",
+    "main.js.map": "/demo-react-application/static/js/main.a57da4a8.chunk.js.map",
     "runtime-main.js": "/demo-react-application/static/js/runtime-main.61a5edfb.js",
     "runtime-main.js.map": "/demo-react-application/static/js/runtime-main.61a5edfb.js.map",
     "static/css/2.ebcfd34c.chunk.css": "/demo-react-application/static/css/2.ebcfd34c.chunk.css",
-    "static/js/2.d2832099.chunk.js": "/demo-react-application/static/js/2.d2832099.chunk.js",
-    "static/js/2.d2832099.chunk.js.map": "/demo-react-application/static/js/2.d2832099.chunk.js.map",
+    "static/js/2.edba49dd.chunk.js": "/demo-react-application/static/js/2.edba49dd.chunk.js",
+    "static/js/2.edba49dd.chunk.js.map": "/demo-react-application/static/js/2.edba49dd.chunk.js.map",
     "index.html": "/demo-react-application/index.html",
-    "precache-manifest.99fd9d17cb34ab4e3d88bd1dc7743aa3.js": "/demo-react-application/precache-manifest.99fd9d17cb34ab4e3d88bd1dc7743aa3.js",
+    "precache-manifest.bdd0f9f825be9fa539b54e7e62653d64.js": "/demo-react-application/precache-manifest.bdd0f9f825be9fa539b54e7e62653d64.js",
     "service-worker.js": "/demo-react-application/service-worker.js",
     "static/css/2.ebcfd34c.chunk.css.map": "/demo-react-application/static/css/2.ebcfd34c.chunk.css.map",
     "static/css/main.162ea942.chunk.css.map": "/demo-react-application/static/css/main.162ea942.chunk.css.map",
-    "static/js/2.d2832099.chunk.js.LICENSE.txt": "/demo-react-application/static/js/2.d2832099.chunk.js.LICENSE.txt",
+    "static/js/2.edba49dd.chunk.js.LICENSE.txt": "/demo-react-application/static/js/2.edba49dd.chunk.js.LICENSE.txt",
     "static/media/custom.css": "/demo-react-application/static/media/SFProText-Regular.ce45a9a9.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.61a5edfb.js",
     "static/css/2.ebcfd34c.chunk.css",
-    "static/js/2.d2832099.chunk.js",
+    "static/js/2.edba49dd.chunk.js",
     "static/css/main.162ea942.chunk.css",
-    "static/js/main.64a2efa4.chunk.js"
+    "static/js/main.a57da4a8.chunk.js"
   ]
 }
