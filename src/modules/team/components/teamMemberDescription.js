@@ -19,7 +19,7 @@ const Container = styled(Row)`
 
 `
 const LeftContainer = styled(Column)`
-  padding-top: 270px;
+  padding-top: 160px;
   width: 100%;
   height: 100%;
   max-width: 714px;
@@ -79,7 +79,7 @@ const SocialIcon = styled.img`
 `
 const ContentContainer = styled(Column)`
   background: url("/demo-react-application/images/team_bg_image.svg");
-  height: 565px;
+  height: 688px;
   max-height: 688px;
   align-items: center;
 `
