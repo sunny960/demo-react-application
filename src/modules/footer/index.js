@@ -61,7 +61,7 @@ const MessageIcon = styled.img`
 `
 const Footer = () => {
     return (<Container>
-        <FooterIcon src={'/demo-react-application/images/footer_logo.svg'} onClick={() => history.push('/')}/>
+        <FooterIcon src={'/images/footer_logo.svg'} onClick={() => history.push('/')}/>
         <Title>{'© Prosportfitness 2021'}</Title>
         <ConditionContainer>
             <Tag href={'#'} target={'_blank'}>{'Privacy Policy'}</Tag>
@@ -69,7 +69,7 @@ const Footer = () => {
             <Tag href={'#'} target={'_blank'}>{'Terms and Conditions'}</Tag>
 
         </ConditionContainer>
-        <MessageIcon src={'/demo-react-application/images/message_icon.svg'}/>
+        <MessageIcon src={'/images/message_icon.svg'}/>
     </Container>)
 
 }

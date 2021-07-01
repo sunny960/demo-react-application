@@ -1564,7 +1564,7 @@ a.hover-bgcolor:hover {
     -webkit-appearance: none;
     appearance: none;
     background-color: #fff;
-    background-image: url('/demo-react-application/images/light-grey-down-icon.svg');
+    background-image: url('/images/light-grey-down-icon.svg');
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
@@ -1574,7 +1574,7 @@ a.hover-bgcolor:hover {
     -webkit-appearance: none;
     appearance: none;
     background-color: #fff;
-    background-image: url('/demo-react-application/images/black-down-icon.svg');
+    background-image: url('/images/black-down-icon.svg');
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
@@ -1584,7 +1584,7 @@ a.hover-bgcolor:hover {
     -webkit-appearance: none;
     appearance: none;
     background-color: transparent;
-    background-image: url('/demo-react-application/images/blue-down-icon.svg');
+    background-image: url('/images/blue-down-icon.svg');
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
@@ -2375,11 +2375,11 @@ tbody .striped-row:nth-child(even) {
 }
 
 .reward-placeholder-img {
-    background-image: url("/demo-react-application/images/reward-placeholder.png");
+    background-image: url("/images/reward-placeholder.png");
 }
 
 .award-placeholder-img {
-    background-image: url("/demo-react-application/images/Award_Placeholder.png");
+    background-image: url("/images/Award_Placeholder.png");
 }
 
 .award-logo-image {

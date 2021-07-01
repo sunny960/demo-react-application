@@ -111,7 +111,7 @@ function generateGUID() {
 function basicAlert(message) {
     swal({
         title: message,
-        icon: '/demo-react-application/images/alert-icon.png',
+        icon: '/images/alert-icon.png',
     })
 }
 

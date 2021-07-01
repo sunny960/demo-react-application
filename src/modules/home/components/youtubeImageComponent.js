@@ -63,8 +63,8 @@ const YoutubeImageComponent = () => {
             </DialogContent>
         </Dialog>
         <ImageContainer>
-            <YouTubeImage src={'/demo-react-application/images/youtube_image.svg'}/>
-            <YouTubePlayIcon src={'/demo-react-application/images/youtube_play_icon.svg'} onClick={() => setOpen(true)}/>
+            <YouTubeImage src={'/images/youtube_image.svg'}/>
+            <YouTubePlayIcon src={'/images/youtube_play_icon.svg'} onClick={() => setOpen(true)}/>
         </ImageContainer>
         <AboutBtn onClick={() => history.push('/about')}>{'About Us'}</AboutBtn>
     </Container>)

@@ -1,6 +1,5 @@
 {
   "name": "demo-react-application",
-  "homepage": "http://sunny960.github.io/demo-react-application",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

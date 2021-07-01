@@ -7,7 +7,7 @@ const Column = styled.div`
 `
 const Container = styled(Column)`
   width: 100%;
-  background: url('/demo-react-application/images/transformation_experts.jpg');
+  background: url('/images/transformation_experts.jpg');
   align-items: center;
   justify-content: center;
   max-height: 846px;

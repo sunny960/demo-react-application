@@ -171,9 +171,9 @@ const ReadyToJoinComponent = () => {
             '\n' +
             '+91 9004559955'}</Address>
             <SocialIconContainer>
-                <SocialIcon src={'/demo-react-application/images/twiiter_icon.jpg'} onClick={()=>window.open('https://twitter.com/narendramodi?lang=en', '_blank')}/>
-                <SocialIcon src={'/demo-react-application/images/facebook_icon.jpg'} onClick={()=>window.open('https://www.facebook.com/narendramodi/', '_blank')}/>
-                <SocialIcon src={'/demo-react-application/images/instagram_icon.jpg'} onClick={()=>window.open('https://www.instagram.com/narendramodi/?hl=en', '_blank')}/>
+                <SocialIcon src={'/images/twiiter_icon.jpg'} onClick={()=>window.open('https://twitter.com/narendramodi?lang=en', '_blank')}/>
+                <SocialIcon src={'/images/facebook_icon.jpg'} onClick={()=>window.open('https://www.facebook.com/narendramodi/', '_blank')}/>
+                <SocialIcon src={'/images/instagram_icon.jpg'} onClick={()=>window.open('https://www.instagram.com/narendramodi/?hl=en', '_blank')}/>
             </SocialIconContainer>
         </RightContainer>
 

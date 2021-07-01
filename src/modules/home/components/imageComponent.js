@@ -22,7 +22,7 @@ const ImageContainer = styled(Row)`
   position: relative;
   width: 100%;
   height: 815px;
-  background: url('/demo-react-application/images/bg_advertise_color.jpg');
+  background: url('/images/bg_advertise_color.jpg');
   //mix-blend-mode: hue;
 `
 const AdvertiseImage = styled(Column)`
@@ -31,7 +31,7 @@ const AdvertiseImage = styled(Column)`
   width: 100%;
   max-width: 972px;
   height: 779px;
-  background: url('/demo-react-application/images/fitness_advertisement.svg');
+  background: url('/images/fitness_advertisement.svg');
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 `
 const ImageComponent = () => {
@@ -39,7 +39,7 @@ const ImageComponent = () => {
         <Container>
             <UnderDevelopment/>
             {/*<ImageContainer>*/}
-            {/*        <AdvertiseImage src="/demo-react-application/images/bg_advertise_color.jpg"/>*/}
+            {/*        <AdvertiseImage src="/images/bg_advertise_color.jpg"/>*/}
             {/*</ImageContainer>*/}
         </Container>)
 }

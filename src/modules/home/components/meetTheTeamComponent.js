@@ -24,16 +24,16 @@ const ItemContainer = styled.div`
 `
 const list = [
     {
-        image: '/demo-react-application/images/meet_with_1.svg',
+        image: '/images/meet_with_1.svg',
     },
     {
-        image: '/demo-react-application/images/meet_with_2.svg',
+        image: '/images/meet_with_2.svg',
     },
     {
-        image: '/demo-react-application/images/meet_with_3.svg',
+        image: '/images/meet_with_3.svg',
     },
     {
-        image: '/demo-react-application/images/meet_with_4.jpg',
+        image: '/images/meet_with_4.jpg',
     },
 ]
 
