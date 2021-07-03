@@ -16,6 +16,7 @@ import Franchise from "./modules/franchise";
 import About from "./modules/about";
 import Theme from './theme'
 import Program from "./modules/programs";
+import Session from "./modules/session";
 
 
 
@@ -33,6 +34,7 @@ class App extends Component {
                         <Route exact path={'/franchise'} component={Franchise}/>
                         <Route exact path={'/about'} component={About}/>
                         <Route exact path={'/program'} component={Program}/>
+                        <Route exact path={'/session'} component={Session}/>
                         <Redirect exact from='*' to="/"/>
                     </Switch>
                 </Router>
