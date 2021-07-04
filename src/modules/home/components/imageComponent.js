@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components'
-import UnderDevelopment from "../../common/underDevelopment";
 
 const Row = styled.div`
   display: flex;
@@ -11,36 +10,96 @@ const Column = styled.div`
   flex-direction: column;
 `
 
-const Container = styled(Column)`
-  width: 100%;
-  //background: #174C6E;
-  background: #FFFFFF;
-  height: 400px;
-  align-items: center;
-`
-const ImageContainer = styled(Row)`
+const ImageContainer = styled(Column)`
   position: relative;
   width: 100%;
-  height: 815px;
-  background: url('/images/bg_advertise_color.jpg');
-  //mix-blend-mode: hue;
 `
-const AdvertiseImage = styled(Column)`
-  top: 36px;
-  position: absolute;
+const AdvertiseImage = styled.img`
   width: 100%;
-  max-width: 972px;
-  height: 779px;
-  background: url('/images/fitness_advertisement.svg');
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  height: 815px;
+`
+const ButtonContainer = styled(Row)`
+  padding: 0 102px 0 35px;
+  position: absolute;
+  bottom: 26px;
+  justify-content: space-between;
+  width: 100%;
+`
+const PersonalTrainingBtn = styled.button`
+  width: 274px;
+  height: 71px;
+  background: #FAF9F8;
+  border-radius: 100px;
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 133.7%;
+  /* identical to box height, or 19px */
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #174C6E;
+  border: 1px;
+`
+const ResidentialBtn = styled.button`
+  width: 470px;
+  height: 71px;
+  background: transparent;
+
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 100px;
+
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 133.7%;
+  /* identical to box height, or 19px */
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+  margin-left: 44px;
+`
+const FranchiseBtn = styled.button`
+  width: 221px;
+  height: 71px;
+  background: #FF5C15;
+  border-radius: 100px;
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 133.7%;
+  /* identical to box height, or 19px */
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #FAF9F8;
+  border: 1px;
 `
 const ImageComponent = () => {
     return (
-        <Container>
-            <UnderDevelopment/>
-            {/*<ImageContainer>*/}
-            {/*        <AdvertiseImage src="/images/bg_advertise_color.jpg"/>*/}
-            {/*</ImageContainer>*/}
-        </Container>)
+        <ImageContainer>
+            <AdvertiseImage src="/images/home_page_1.png"/>
+            <ButtonContainer>
+                <Row>
+                    <PersonalTrainingBtn>{'Personal Training'}</PersonalTrainingBtn>
+                    <ResidentialBtn>{'Residential Fitness Collaboration'}</ResidentialBtn>
+                </Row>
+                <Column>
+                    <FranchiseBtn>{'Franchise'}</FranchiseBtn>
+                </Column>
+            </ButtonContainer>
+        </ImageContainer>
+    )
 }
 export default ImageComponent

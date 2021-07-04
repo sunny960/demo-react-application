@@ -1,11 +1,5 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
-@font-face {
-    font-family: 'SFProText';
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/SFProText-Regular.ttf') format('truetype')
-}
 
 body {
     background-color: #eef5f7;
@@ -17,9 +11,6 @@ html, body {
     letter-spacing: -0.5px;
 }
 
-body, button, html, input, select, textarea, div, p, span, label {
-    font-family: "SFProText", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" !important;
-}
 
 .position-unset {
     position: unset !important;
@@ -2131,7 +2122,7 @@ logo-t-b-m {
 }
 
 .table-pagination {
-    font-family: "SFProText", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-family: "Josefin Sans", "serif";
     border: solid 1px #cbcbcb;
     border-radius: 3px;
     margin: 0.25rem;

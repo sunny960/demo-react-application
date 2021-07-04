@@ -16,33 +16,9 @@ const Container = styled(Column)`
   align-items: center;
   justify-content: center;
 `
-const ItemContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-`
-const list = [
-    {
-        image: '/images/meet_with_1.svg',
-    },
-    {
-        image: '/images/meet_with_2.svg',
-    },
-    {
-        image: '/images/meet_with_3.svg',
-    },
-    {
-        image: '/images/meet_with_4.jpg',
-    },
-]
-
-const Item = styled(Column)`
-  flex: 25;
-`
 const Icon = styled.img`
-  //width: 25%;
-  height: 596px;
+  max-width: 100%;
+  height: 693px;
 `
 const FreeTrialButton = styled.button`
   font-family: Josefin Sans;
@@ -82,18 +58,12 @@ const Title = styled.span`
 
   color: #174C6E;
 
-  padding: 145px 0 150px 0;
+  padding: 145px 0 96px 0;
 `
 const MeetTheTeamComponent = () => {
     return (<Container id={'teamMeet'}>
         <Title>{'Meet the Team'}</Title>
-        <ItemContainer>
-            {list && list.map((obj, index) =>
-                    // <Item>
-                    <Icon src={obj.image}/>
-                // </Item>
-            )}
-        </ItemContainer>
+        <Icon src={'/images/meet_the_team.png'}/>
         <BtnContainer>
             <FreeTrialButton onClick={() => history.push('/team')}>{'Read More'}</FreeTrialButton>
         </BtnContainer>

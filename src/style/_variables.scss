@@ -1,0 +1,95 @@
+////////////////////////////////////////////////
+// Initial Variables
+////////////////////////////////////////////////
+//NEWS
+$grey: #6e7780;
+$grey-light: #cfd2d5;
+$grey-background: #f3f3f4;
+$cold-blue: #7ab2e1;
+$cool-red: #f44336;
+$cool-green: #4caf50;
+$cool-yellow: #ffc107;
+$cool-border: #0d1d2c1a;
+$text-dark: #0d1d2c;
+$cool-grey-darker: #0d1d2c;
+$white: #ffffff;
+$accent-2: #ea5160;
+$cool-grey-dark: #3d4a56;
+$transparent: rgba(122, 178, 225, 0.15);
+//NEWS END
+
+$cool-grey: #6d7780;
+$cool-grey-light: #868e95;
+$cool-grey-lighter: #dee5ed;
+$cool-grey-lightest: #efefef;
+
+$text-light: #dee5ed;
+
+$black: #1a2531;
+
+$yellow: #f0ad4e;
+$orange: #f18e25;
+$green: #5cb85c;
+$jaded-ice: #cdeee4;
+$blue: #5bc0de;
+$blue-light: #79b2e1;
+$red: #d9534f;
+
+$dark-grey: rgba(13, 29, 44, 0.2);
+
+$accent: #7ab2e1;
+
+$accent-tint: #afd0ed;
+$accent-shade: #496a87;
+$accent-3: #00aca9;
+
+$info: #496a87;
+
+$success: #03a678;
+$warning: #f18e25;
+$danger: #d81b1b;
+$link: #446cb3;
+
+// Currency colors
+$kau: #857550;
+$kag: #898c8d;
+$kvt: #7ab2e1;
+$usd: #228d57;
+$eur: #003899;
+$eth: #3c3c3d;
+$gbp: #cf142b;
+$btc: #f7931a;
+
+$facebook: #3b5998;
+$messanger: #0084ff;
+$twitter: #1da1f2;
+
+// new branding colors
+$san-marino: #446cb3;
+$seagull: #7ab2e1;
+
+$elevation-2: 0px 3px 1px -2px rgba($black, 0.2), 0px 2px 2px 0px rgba($black, 0.14), 0px 1px 5px 0px rgba($black, 0.12);
+
+$elevation-3: 0px 3px 3px -2px rgba($black, 0.2), 0px 3px 4px 0px rgba($black, 0.14), 0px 1px 8px 0px rgba($black, 0.12);
+
+$elevation-4: 0px 2px 4px -1px rgba($black, 0.2), 0px 4px 5px 0px rgba($black, 0.14), 0px 1px 10px 0px rgba($black, 0.12);
+
+$elevation-6: 0px 3px 5px -1px rgba($black, 0.2), 0px 6px 10px 0px rgba($black, 0.14), 0px 1px 18px 0px rgba($black, 0.12);
+
+$elevation-8: 0px 5px 5px -3px rgba($black, 0.2), 0px 8px 10px 1px rgba($black, 0.14), 0px 3px 14px 2px rgba($black, 0.12);
+
+$elevation-16: 0px 8px 10px -5px rgba($black, 0.2), 0px 16px 24px 2px rgba($black, 0.14), 0px 6px 30px 5px rgba($black, 0.12);
+
+$dashboard-width: 1000px;
+$navbar: 60px;
+
+$font-path: './fonts';
+
+%gradient-background {
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(135deg, rgba(255, 255, 255, 1) 20%, rgba(238, 244, 249, 1) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 1) 20%, rgba(238, 244, 249, 1) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 20%, rgba(238, 244, 249, 1) 100%);
+}
+
+$tablet: 768px;

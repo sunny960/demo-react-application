@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components'
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
+import Utility from "../../../utils";
 
 const Row = styled.div`
   display: flex;
@@ -85,7 +86,7 @@ const RedefineFitnessComponent = () => {
             <Column>
                 <RedefineText>{'Fitness Redefined'}</RedefineText>
                 <DescriptionText>{'We believe in working with you to unlock your highest fitness potential and become the best version of yourself. With our thoughtfully curated training sessions.'}</DescriptionText>
-                <BecomeMemberBtn>{'get started'}</BecomeMemberBtn>
+                <BecomeMemberBtn onClick={() => Utility.showUnderDevelopment()}>{'get started'}</BecomeMemberBtn>
             </Column>
             <Column>
                 <Icon src={'/images/fitnessRedefine.png'} onClick={() => setOpen(true)}/>

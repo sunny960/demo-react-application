@@ -29,11 +29,11 @@ const Icon = styled.img`
   height: 848px;
 `
 const LeftBtnImage = styled.img`
-  //width: 328px;
+  width: 328px;
   height: 94px;
 `
 const RightBtnImage = styled.img`
-  //width: 365px;
+  width: 328px;
   height: 94px;
 `
 const Title = styled.span`
@@ -89,7 +89,7 @@ const GetOneOnLiveTraining = () => {
                     <LeftBtnImage src={'/images/get_onlive_training_first_btn_image.png'}/>
                     <RightBtnImage src={'/images/get_onlive_training_2nd_btn_image.png'}/>
                 </ImageBtnContainer>
-                <PayNowButton onClick={()=>Utility.showUnderDevelopment()}>{'Pay Now'}</PayNowButton>
+                <PayNowButton onClick={() => Utility.showUnderDevelopment()}>{'Pay Now'}</PayNowButton>
             </Column>
         </ContentContainer>
 

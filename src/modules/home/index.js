@@ -1,5 +1,6 @@
 import React from "react";
 import HomeComponent from "./homeComponent";
+import {Loader} from "../common/loader/loader";
 
 class Home extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Home extends React.Component {
 
     render() {
         return (
+            // <Loader/>
             <HomeComponent/>
         )
     }

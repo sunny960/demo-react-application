@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './style/custom.css';
+import './style/stylesheet.css';
 import {Router, Route} from 'react-router-dom';
 import {history} from "./utils/history";
 import {Redirect, Switch} from "react-router";
