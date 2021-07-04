@@ -14,7 +14,7 @@ import Footer from "../footer";
 
 const HomeComponent = () => {
     return (<>
-        <HeaderComponent/>
+        {/*<HeaderComponent/>*/}
         <ImageComponent/>
         <RedefineFitnessComponent/>
         <OurBrandPresenceComponent/>
