@@ -1,5 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
+import Utility from "../../../utils";
+import {history} from "../../../utils/history";
 
 const Row = styled.div`
   display: flex;
@@ -92,11 +94,13 @@ const ImageComponent = () => {
             <AdvertiseImage src="/images/home_page_1.png"/>
             <ButtonContainer>
                 <Row>
-                    <PersonalTrainingBtn>{'Personal Training'}</PersonalTrainingBtn>
-                    <ResidentialBtn>{'Residential Fitness Collaboration'}</ResidentialBtn>
+                    <PersonalTrainingBtn
+                        onClick={() => Utility.showUnderDevelopment()}>{'Personal Training'}</PersonalTrainingBtn>
+                    <ResidentialBtn
+                        onClick={() => Utility.showUnderDevelopment()}>{'Residential Fitness Collaboration'}</ResidentialBtn>
                 </Row>
                 <Column>
-                    <FranchiseBtn>{'Franchise'}</FranchiseBtn>
+                    <FranchiseBtn onClick={() => Utility.showUnderDevelopment()}>{'Franchise'}</FranchiseBtn>
                 </Column>
             </ButtonContainer>
         </ImageContainer>

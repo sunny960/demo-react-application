@@ -36,7 +36,7 @@ const Title = styled.span`
   padding-bottom: 14px;
 `
 const ConditionContainer = styled(Row)`
-  max-width: 385px;
+  max-width: 400px;
   padding-bottom: 75px;
   gap: 25px;
   justify-content: space-between;
