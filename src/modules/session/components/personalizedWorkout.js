@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Utility from "../../../utils";
 
 const Row = styled.div`
   display: flex;
@@ -95,7 +96,7 @@ const PersonalizedWorkout = () => {
         </ImageContainer>
         <TextContainer>
             <Title>{'Personalized Workouts based on your physique and goals '}</Title>
-            <BecomeMemberBtn>{'Become A Member'}</BecomeMemberBtn>
+            <BecomeMemberBtn onClick={() => Utility.showUnderDevelopment()}>{'Become A Member'}</BecomeMemberBtn>
         </TextContainer>
     </Container>)
 

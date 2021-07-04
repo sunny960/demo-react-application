@@ -2,6 +2,8 @@ import React from "react";
 import styled, {css} from "styled-components";
 import {history} from "../../utils/history";
 import {Link} from "react-scroll";
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import ApplyForPersonalTrainer from "./applyForPersonalTrainer";
 
 const Row = styled.div`
   display: flex;
@@ -56,6 +58,19 @@ const SessionButton = styled.button`
   color: #FAF9F8;
   border: 1px;
 `
+const ApplyTrainerButton = styled.button`
+  background: #FF5C15;
+  border-radius: 5px;
+  height: 37px;
+  width: 146px;
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #FAF9F8;
+  border: 1px;
+`
 
 const Icon = styled.img`
   width: 11px;
@@ -73,6 +88,15 @@ const VideoIcon = styled(Icon)`
   padding-right: 10px;
 `
 const HeaderMenuRow = (props) => {
+    const [state, setState] = React.useState({right: false});
+
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+        setState({...state, [anchor]: open});
+    };
+
     return (<HeaderContainer backgroundColor={props.backgroundColor || ''}>
         <HeaderImageContainer>
             <HeaderIcon src="/images/pro_sport_icon.svg" onClick={() => history.push('/')}/>
@@ -85,10 +109,22 @@ const HeaderMenuRow = (props) => {
             {/*<Item><Link  to="teamMeet" spy={true} smooth={true}>{'Trainers'}</Link></Item>*/}
             <Item><Link to="readyToJoin" spy={true} smooth={true}>{'Contact'}</Link></Item>
             <Item>
-                <SessionButton>
+                {!props.showBtnAppyForTrainner && <SessionButton onClick={() => history.push('/session')}>
                     <VideoIcon src="/images/video_icon.svg"/>
                     <span>{'Session'}</span>
-                </SessionButton>
+                </SessionButton>}
+
+                {props.showBtnAppyForTrainner && <ApplyTrainerButton onClick={toggleDrawer('right', true)}>
+                    <span>{'Apply for Trainer'}</span>
+                </ApplyTrainerButton>}
+                <SwipeableDrawer
+                    anchor={'right'}
+                    open={state['right']}
+                    onClose={toggleDrawer('right', false)}
+                    onOpen={toggleDrawer('right', true)}
+                >
+                    {state.right && <ApplyForPersonalTrainer setState={setState} state={state}/>}
+                </SwipeableDrawer>
             </Item>
         </MenuContainer>
     </HeaderContainer>)

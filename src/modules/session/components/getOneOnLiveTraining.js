@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HeaderMenuRow from "../../header/headerMenuRow";
+import Utility from "../../../utils";
 
 const Row = styled.div`
   display: flex;
@@ -77,7 +78,7 @@ const PayNowButton = styled.button`
 `
 const GetOneOnLiveTraining = () => {
     return (<Container>
-        <HeaderMenuRow backgroundColor={'transparent'}/>
+        <HeaderMenuRow backgroundColor={'transparent'} showBtnAppyForTrainner={true}/>
         <ContentContainer>
             <Column>
                 <Icon src={'/images/get_onlive_phone_image.png'}/>
@@ -88,7 +89,7 @@ const GetOneOnLiveTraining = () => {
                     <LeftBtnImage src={'/images/get_onlive_training_first_btn_image.png'}/>
                     <RightBtnImage src={'/images/get_onlive_training_2nd_btn_image.png'}/>
                 </ImageBtnContainer>
-                <PayNowButton>{'Pay Now'}</PayNowButton>
+                <PayNowButton onClick={()=>Utility.showUnderDevelopment()}>{'Pay Now'}</PayNowButton>
             </Column>
         </ContentContainer>
 
