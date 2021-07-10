@@ -60,7 +60,6 @@ const Icon4 =styled.img`
   width: 224px;
   height: 227px;
 `
-//TODO need to work here
 const BecomePartOfFitness = () => {
     return (<Container>
         <LeftContainer>
