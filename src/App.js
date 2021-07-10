@@ -5,7 +5,7 @@ import {history} from "./utils/history";
 import {Redirect, Switch} from "react-router";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { ThemeProvider } from 'styled-components'
+import {ThemeProvider} from 'styled-components'
 
 
 import {dispatchAction} from "./utils";
@@ -21,7 +21,6 @@ import ResidentialFitnessCollaboration from "./modules/residentialFitnessCollabo
 import PersonalTrainingPage from "./modules/personalTrainingPage";
 
 
-
 class App extends Component {
 
     render() {
@@ -29,19 +28,19 @@ class App extends Component {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <ThemeProvider theme={Theme}>
-                <Router history={history}>
-                    <Switch>
-                        <Route exact path={'/'} component={Home}/>
-                        <Route exact path={'/team'} component={Team}/>
-                        <Route exact path={'/franchise'} component={Franchise}/>
-                        <Route exact path={'/about'} component={About}/>
-                        <Route exact path={'/program'} component={Program}/>
-                        <Route exact path={'/session'} component={Session}/>
-                        <Route exact path={'/residential-fitness'} component={ResidentialFitnessCollaboration}/>
-                        <Route exact path={'/personal-training'} component={PersonalTrainingPage}/>
-                        <Redirect exact from='*' to="/"/>
-                    </Switch>
-                </Router>
+                    <Router history={history}>
+                        <Switch>
+                            <Route exact path={'/'} component={Home}/>
+                            <Route exact path={'/team'} component={Team}/>
+                            <Route exact path={'/franchise'} component={Franchise}/>
+                            <Route exact path={'/about'} component={About}/>
+                            <Route exact path={'/program'} component={Program}/>
+                            <Route exact path={'/session'} component={Session}/>
+                            <Route exact path={'/residential-fitness'} component={ResidentialFitnessCollaboration}/>
+                            <Route exact path={'/personal-training'} component={PersonalTrainingPage}/>
+                            <Redirect exact from='*' to="/"/>
+                        </Switch>
+                    </Router>
                 </ThemeProvider>
             </MuiThemeProvider>
         );
