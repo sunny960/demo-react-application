@@ -100,7 +100,7 @@ const ImageComponent = () => {
                         onClick={() => Utility.showUnderDevelopment()}>{'Residential Fitness Collaboration'}</ResidentialBtn>
                 </Row>
                 <Column>
-                    <FranchiseBtn onClick={() => Utility.showUnderDevelopment()}>{'Franchise'}</FranchiseBtn>
+                    <FranchiseBtn onClick={() =>history.push('/franchise')}>{'Franchise'}</FranchiseBtn>
                 </Column>
             </ButtonContainer>
         </ImageContainer>

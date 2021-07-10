@@ -5,6 +5,7 @@ import Footer from "../footer";
 import BecomePartOfFitness from "./components/becomePartOfFitness";
 import OpportunityToJoin from "./components/opportunityToJoin";
 import StepBecomeFranchisePartner from "./components/stepBecomeFranchisePartner";
+import ReadyToStarted from "./components/readyToStarted";
 
 const FranchiseComponent = () => {
     return (<>
@@ -12,7 +13,7 @@ const FranchiseComponent = () => {
         <BecomePartOfFitness/>
         <OpportunityToJoin/>
         <StepBecomeFranchisePartner/>
-        <ReadyToJoinComponent/>
+        <ReadyToStarted/>
         <Footer/>
     </>)
 
