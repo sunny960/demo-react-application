@@ -72,7 +72,7 @@ const SocialIcon = styled.img`
   height: 24px;
   cursor: pointer;
 `
-const Title =styled.span`
+const Title = styled.span`
   font-family: Josefin Sans;
   font-style: normal;
   font-weight: 600;
@@ -100,7 +100,7 @@ const Content = styled.span`
   max-width: 382px;
   padding: 10px 0 50px 0;
 `
-const InputField =styled.input`
+const InputField = styled.input`
   width: 100%;
   max-width: 470px;
   border: 1px solid #174C6E;
@@ -108,7 +108,7 @@ const InputField =styled.input`
   border-left: none;
   border-right: none;
   background: transparent;
-  padding: 11px 0;
+  padding: 11px 0 11px 5px;
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -119,16 +119,18 @@ const InputField =styled.input`
 
   letter-spacing: -0.02em;
   color: #174C6E;
+
   ::-webkit-input-placeholder {
-        color: #174C6E;
-    }
+    color: #174C6E;
+  }
+
   &.hasFocus:focus,
   &:active {
     border-color: #174C6E;
   }
 
 `
-const SubmitForm =styled.button`
+const SubmitForm = styled.button`
   width: 169px;
   height: 49px;
   background: #FF5C15;
@@ -147,7 +149,7 @@ const SubmitForm =styled.button`
   color: #FFFFFF;
   margin: 75px 0 128px 0;
 `
-const SignUpForm = ()=>{
+const SignUpForm = () => {
     return (<>
         <InputField type={'text'} placeholder={'Name'}/>
         <InputField type={'text'} placeholder={'Contact Number'}/>
@@ -171,9 +173,12 @@ const ReadyToJoinComponent = () => {
             '\n' +
             '+91 9004559955'}</Address>
             <SocialIconContainer>
-                <SocialIcon src={'/images/twiiter_icon.jpg'} onClick={()=>window.open('https://twitter.com/narendramodi?lang=en', '_blank')}/>
-                <SocialIcon src={'/images/facebook_icon.jpg'} onClick={()=>window.open('https://www.facebook.com/narendramodi/', '_blank')}/>
-                <SocialIcon src={'/images/instagram_icon.jpg'} onClick={()=>window.open('https://www.instagram.com/narendramodi/?hl=en', '_blank')}/>
+                <SocialIcon src={'/images/twiiter_icon.jpg'}
+                            onClick={() => window.open('https://twitter.com/narendramodi?lang=en', '_blank')}/>
+                <SocialIcon src={'/images/facebook_icon.jpg'}
+                            onClick={() => window.open('https://www.facebook.com/narendramodi/', '_blank')}/>
+                <SocialIcon src={'/images/instagram_icon.jpg'}
+                            onClick={() => window.open('https://www.instagram.com/narendramodi/?hl=en', '_blank')}/>
             </SocialIconContainer>
         </RightContainer>
 
