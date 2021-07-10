@@ -18,6 +18,7 @@ import Theme from './theme'
 import Program from "./modules/programs";
 import Session from "./modules/session";
 import ResidentialFitnessCollaboration from "./modules/residentialFitnessCollaboration";
+import PersonalTrainingPage from "./modules/personalTrainingPage";
 
 
 
@@ -37,6 +38,7 @@ class App extends Component {
                         <Route exact path={'/program'} component={Program}/>
                         <Route exact path={'/session'} component={Session}/>
                         <Route exact path={'/residential-fitness'} component={ResidentialFitnessCollaboration}/>
+                        <Route exact path={'/personal-training'} component={PersonalTrainingPage}/>
                         <Redirect exact from='*' to="/"/>
                     </Switch>
                 </Router>

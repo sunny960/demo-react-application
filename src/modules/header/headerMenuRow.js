@@ -108,7 +108,7 @@ const HeaderMenuRow = (props) => {
             <Item onClick={() => history.push('/team')}>{'Trainers'}</Item>
             {/*<Item><Link  to="teamMeet" spy={true} smooth={true}>{'Trainers'}</Link></Item>*/}
             <Item><Link to="readyToJoin" spy={true} smooth={true}>{'Contact'}</Link></Item>
-            <Item>
+            {!props?.isHideSessionMenu && <Item>
                 {!props.showBtnAppyForTrainner && <SessionButton onClick={() => history.push('/session')}>
                     <VideoIcon src="/images/video_icon.svg"/>
                     <span>{'Session'}</span>
@@ -125,7 +125,7 @@ const HeaderMenuRow = (props) => {
                 >
                     {state.right && <ApplyForPersonalTrainer setState={setState} state={state}/>}
                 </SwipeableDrawer>
-            </Item>
+            </Item>}
         </MenuContainer>
     </HeaderContainer>)
 
