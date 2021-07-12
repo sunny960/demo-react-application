@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styled from 'styled-components'
 import Utils from "../../utils";
+import sendSESMail from "../../managers/sendMail";
 
 const Row = styled.div`
   display: flex;
@@ -160,7 +161,6 @@ const SubmitForm = styled.button`
   margin: 75px 0 128px 0;
 `
 const SignUpForm = () => {
-    // Utils.sendSESMail()
     const [userData, setUserData] = useState({
         name: '',
         contactNumber: '',
@@ -175,12 +175,9 @@ const SignUpForm = () => {
     })
     const onHandleChange = (event) => {
         const {name, value} = event.target
-        console.log("name===", name)
-        console.log("value===", value)
         let user = userData, error = userDataError
         user[name] = value
         error[name] = ''
-        console.log("user====", user)
         setUserData({...user})
         setUserDataError({...error})
     }
@@ -195,16 +192,15 @@ const SignUpForm = () => {
             name: nameError,
             description: descriptionError,
         });
-        console.log("emailError==", emailError)
-        console.log("contactNumberError==", contactNumberError)
-        console.log("nameError==", nameError)
-        console.log("descriptionError==", descriptionError)
-        return emailError || contactNumberError || nameError || descriptionError;
+        return !(emailError || contactNumberError || nameError || descriptionError);
     };
-    const onSubmit = () => {
+    const onSubmit = async () => {
         if (!validateForm())
             return;
-
+        let[error, response]= await Utils.parseResponse(sendSESMail(userData))
+        if (error)
+           return Utils.apiFailureToast('Unable to send mail.')
+        Utils.apiSuccessToast('mail has been sent successfully.')
     }
     return (<>
         <InputField type={'text'} placeholder={'Name'} name={'name'} value={userData.name}

@@ -95,12 +95,12 @@ const ImageComponent = () => {
             <ButtonContainer>
                 <Row>
                     <PersonalTrainingBtn
-                        onClick={() => Utility.showUnderDevelopment()}>{'Personal Training'}</PersonalTrainingBtn>
+                        onClick={() => history.push('/personal-training')}>{'Personal Training'}</PersonalTrainingBtn>
                     <ResidentialBtn
-                        onClick={() => Utility.showUnderDevelopment()}>{'Residential Fitness Collaboration'}</ResidentialBtn>
+                        onClick={() => history.push('/residential-fitness')}>{'Residential Fitness Collaboration'}</ResidentialBtn>
                 </Row>
                 <Column>
-                    <FranchiseBtn onClick={() =>history.push('/franchise')}>{'Franchise'}</FranchiseBtn>
+                    <FranchiseBtn onClick={() => history.push('/franchise')}>{'Franchise'}</FranchiseBtn>
                 </Column>
             </ButtonContainer>
         </ImageContainer>
