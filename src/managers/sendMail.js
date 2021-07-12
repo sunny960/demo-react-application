@@ -1,14 +1,15 @@
 import aws from "aws-sdk";
 import pug from "pug";
 import path from "path";
+import Utility from "../utils";
 
 export default function sendSESMail(requestData) {
     console.log("requestData====", requestData)
     if (!requestData)
         return false;
     let config = {
-        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
-        secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY,
+        accessKeyId: Utility.decodeBase64(process.env.REACT_APP_AWS_ACCESS_KEY),
+        secretAccessKey: Utility.decodeBase64(process.env.REACT_APP_AWS_SECRET_KEY),
         region: 'us-east-1'
     }
     aws.config.update(config);
