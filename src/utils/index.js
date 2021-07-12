@@ -3,7 +3,8 @@ import swal from "sweetalert";
 import Cookies from "universal-cookie";
 import ToastService from 'react-material-toast';
 import aws from "aws-sdk";
-
+import pug from 'pug';
+import path from 'path';
 const toast = ToastService.new({
     place: 'topRight',
     duration: 1,
@@ -49,7 +50,8 @@ const utility = {
     extractDate,
     secondsToTime,
     changeDateFormat,
-    getUTCTimeStamp
+    getUTCTimeStamp,
+    sendSESMail
 };
 export default utility;
 
@@ -356,6 +358,56 @@ function uploadFileToS3(fileObject, fileName, mimeType, isPublic = false) {
                 reject(err);
             resolve(uploadData);
         });
+    });
+
+}
+function sendSESMail(requestData) {
+    // if (!requestData)
+    //     return false;
+    let config = {
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY,
+        region: 'us-east-1'
+    }
+    aws.config.update(config);
+    let inInfoFieldHtml = pug.renderFile(path.normalize(__dirname + '../modules/view/genericMailTemplate.pug'), {
+        NAME: 'Sunny',
+        CONTACT_NUMBER: 'Sunny',
+        EMAIL: 'Sunny',
+        DESCRIPTION: 'Sunny',
+    });
+    // Create sendEmail params
+    var params = {
+        Destination: { /* required */
+            // CcAddresses: [
+            //     'EMAIL_ADDRESS',
+            //     /* more items */
+            // ],
+            ToAddresses: [
+                'sunnypardhan80+1@gmail.com',
+                /* more items */
+            ]
+        },
+        Message: inInfoFieldHtml,
+        Source: 'sunnypardhan80@gmail.com'
+    };
+
+    const ses = new aws.SES({apiVersion: '2010-12-01'});
+    // const params = {
+    //     Body: fileObject,
+    //     Bucket: process.env.REACT_APP_AWS_S3_BUCKET_NAME,
+    //     ContentType: mimeType,
+    //     Key: fileName
+    // };
+    // if (isPublic)
+    //     params.ACL = 'public-read';
+    return new Promise(function (resolve, reject) {
+        ses.sendEmail(params,function (err, responseData){
+            if (err)
+                reject(err);
+            resolve(responseData);
+
+        })
     });
 
 }

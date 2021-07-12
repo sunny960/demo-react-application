@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from 'styled-components'
+import Utils from "../../utils";
 
 const Row = styled.div`
   display: flex;
@@ -112,9 +113,10 @@ const InputField = styled.input`
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 121.5%;
-  margin-bottom: 44px;
+  //margin-bottom: 44px;
+  margin-top: 44px;
   /* identical to box height, or 22px */
 
   letter-spacing: -0.02em;
@@ -129,6 +131,14 @@ const InputField = styled.input`
     border-color: #174C6E;
   }
 
+`
+const ErrorMessage = styled.span`
+  width: 100%;
+  max-width: 470px;
+  font-family: Josefin Sans;
+  font-style: normal;
+  color: #FF5C15;
+  padding-top: 5px;
 `
 const SubmitForm = styled.button`
   width: 169px;
@@ -150,12 +160,67 @@ const SubmitForm = styled.button`
   margin: 75px 0 128px 0;
 `
 const SignUpForm = () => {
+    // Utils.sendSESMail()
+    const [userData, setUserData] = useState({
+        name: '',
+        contactNumber: '',
+        email: '',
+        description: ''
+    })
+    const [userDataError, setUserDataError] = useState({
+        name: '',
+        contactNumber: '',
+        email: '',
+        description: ''
+    })
+    const onHandleChange = (event) => {
+        const {name, value} = event.target
+        console.log("name===", name)
+        console.log("value===", value)
+        let user = userData, error = userDataError
+        user[name] = value
+        error[name] = ''
+        console.log("user====", user)
+        setUserData({...user})
+        setUserDataError({...error})
+    }
+    const validateForm = () => {
+        let emailError = !userData.email ? "Please fill the field" : Utils.validateEmail(userData.email) ? "" : "Email is not valid"
+        let contactNumberError = !userData.contactNumber ? "Please fill the field" : ""
+        let nameError = !userData.name ? "Please fill the field" : ""
+        let descriptionError = !userData.description ? "Please fill the field" : ""
+        setUserDataError({
+            email: emailError,
+            contactNumber: contactNumberError,
+            name: nameError,
+            description: descriptionError,
+        });
+        console.log("emailError==", emailError)
+        console.log("contactNumberError==", contactNumberError)
+        console.log("nameError==", nameError)
+        console.log("descriptionError==", descriptionError)
+        return emailError || contactNumberError || nameError || descriptionError;
+    };
+    const onSubmit = () => {
+        if (!validateForm())
+            return;
+
+    }
     return (<>
-        <InputField type={'text'} placeholder={'Name'}/>
-        <InputField type={'text'} placeholder={'Contact Number'}/>
-        <InputField type={'text'} placeholder={'Email'}/>
-        <InputField type={'text'} placeholder={'Tell us all about it'}/>
-        <SubmitForm>{'Submit'}</SubmitForm>
+        <InputField type={'text'} placeholder={'Name'} name={'name'} value={userData.name}
+                    onChange={(event) => onHandleChange(event)}/>
+        {userDataError?.name && <ErrorMessage>{userDataError.name}</ErrorMessage>}
+        <InputField type={'text'} placeholder={'Contact Number'} name={'contactNumber'} value={userData.contactNumber}
+                    onChange={(event) => onHandleChange(event)}/>
+        {userDataError?.contactNumber && <ErrorMessage>{userDataError.contactNumber}</ErrorMessage>}
+        <InputField type={'text'} placeholder={'Email'} name={'email'} value={userData.email}
+                    onChange={(event) => onHandleChange(event)}/>
+        {userDataError?.email && <ErrorMessage>{userDataError.email}</ErrorMessage>}
+        <InputField type={'text'} placeholder={'Tell us all about it'} name={'description'}
+                    value={userData.description} onChange={(event) => onHandleChange(event)}/>
+        {userDataError?.description && <ErrorMessage>{userDataError.description}</ErrorMessage>}
+
+        <SubmitForm onClick={() => onSubmit()}>{'Submit'}</SubmitForm>
     </>)
 
 }
