@@ -2121,17 +2121,6 @@ logo-t-b-m {
     text-indent: 10px;
 }
 
-.table-pagination {
-    font-family: "Josefin Sans", "serif";
-    border: solid 1px #cbcbcb;
-    border-radius: 3px;
-    margin: 0.25rem;
-    color: #848687;
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    text-decoration-line: none !important;
-
-}
-
 tbody .striped-row:nth-child(even) {
     background-color: #F7F9F9 !important;
 }

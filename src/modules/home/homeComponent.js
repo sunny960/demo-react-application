@@ -1,31 +1,48 @@
-import React from "react";
-import HeaderComponent from "../header";
-import ImageComponent from "./components/imageComponent";
-import RedefineFitnessComponent from "./components/redefineFitnessComponent";
-import OurBrandPresenceComponent from "./components/ourBrandPresenceComponent";
-import YoutubeImageComponent from "./components/youtubeImageComponent";
-import InvestInWhatMatterComponent from "./components/investInWhatMatterComponent";
-import GetStartedComponent from "./components/getStartedComponent";
-import OurFitnessProgramComponent from "./components/ourFitnessProgram";
-import MeetTheTeamComponent from "./components/meetTheTeamComponent";
-import EveryMomentCountComponent from "../common/everyMomentCountComponent";
-import ReadyToJoinComponent from "../common/readyToJoinComponent";
-import Footer from "../footer";
+import React, {useEffect, useState} from "react";
+import ViewProductItemList from "./components/viewProductItemList";
+import ViewTagList from "./components/viewTagList";
+import Utility from "../../utils";
+import OpenModal from "./components/openModal";
+import sessionManager from "../../managers/sessionManager";
+import {sessionConstants} from "../../constants";
 
-const HomeComponent = () => {
+const HomeComponent = ({state}) => {
+    const [selectedTag, setSelectedTag] = useState('')
+    const [filteredList, setFilteredList] = useState([])
+    const [selectedProductItem, setSelectedProductItem] = useState(null)
+    const [isOpen, openModal] = useState(false)
+    useEffect(() => {
+        let list = sessionManager.getDataFromLocalStorage(sessionConstants.FAVOURITE_LIST) || []
+        if (list && list.length > 0) {
+            setSelectedTag('Favourites')
+            setFilteredList(list)
+        }
+    }, [])
+
+    function updateSelectedTag(tag = '') {
+        setSelectedTag(tag)
+        if (tag === 'Favourites') {
+            let list = sessionManager.getDataFromLocalStorage(sessionConstants.FAVOURITE_LIST) || []
+            setFilteredList(list)
+        } else
+            setFilteredList(state.indexedProductList[tag]);
+
+    }
+
     return (<>
-        {/*<HeaderComponent/>*/}
-        <ImageComponent/>
-        <RedefineFitnessComponent/>
-        <OurBrandPresenceComponent/>
-        <YoutubeImageComponent/>
-        <InvestInWhatMatterComponent/>
-        <GetStartedComponent/>
-        <OurFitnessProgramComponent/>
-        <MeetTheTeamComponent/>
-        <EveryMomentCountComponent/>
-        <ReadyToJoinComponent/>
-        <Footer/>
+        <ViewTagList tagList={state.tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>
+        {filteredList?.length > 0 &&
+        <ViewProductItemList productList={filteredList}
+                             title={`Videos on ${Utility.capitalizeFirstLetterOfEveryWord(selectedTag)}`}
+                             openModal={openModal}
+                             setSelectedProductItem={setSelectedProductItem}
+                             isOpen={isOpen}
+        />
+        } <ViewProductItemList productList={state.productList} openModal={openModal}
+                               setSelectedProductItem={setSelectedProductItem}
+                               isOpen={isOpen}/>
+
+        {isOpen && <OpenModal selectedProductItem={selectedProductItem} isOpen={isOpen} openModal={openModal}/>}
 
     </>)
 

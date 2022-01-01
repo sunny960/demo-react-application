@@ -24,8 +24,8 @@ export const httpService = (method, headers, data, url) => {
                 let data;
                 try {
                     data = typeof responseText === 'object' ? responseText : JSON.parse(responseText);
-                    if (data && !data.success)
-                        return Promise.reject(data.message);
+                    if (!data)
+                        return Promise.reject(data);
 
                 } catch (err) {
                     return Promise.reject(err)
