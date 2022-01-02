@@ -1,8 +1,17 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), url(/fonts/Roboto-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url(/fonts/Montserrat-Regular.woff) format('woff');
+}
+
 body {
     margin: 0;
-    font-family: 'Montserrat', Montserrat, 'Roboto', Roboto;
+    font-family: 'Montserrat', Montserrat, 'Roboto', Roboto, serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

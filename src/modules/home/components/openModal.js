@@ -14,7 +14,7 @@ const Column = styled.div`
 `
 const Container = styled(Column)`
   position: absolute;
-  max-width: 748px;
+  max-width: 720px;
   min-width: 400px;
   width: 100%;
   box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
@@ -28,7 +28,7 @@ const Container = styled(Column)`
 const Player = styled.iframe`
   display: block;
   width: 100%;
-  height: 416px;
+  height: 400px;
 `
 
 const TextContainer = styled(Column)`
