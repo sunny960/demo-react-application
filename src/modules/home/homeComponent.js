@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import ViewProductItemList from "./components/viewProductItemList";
-import ViewTagList from "./components/viewTagList";
 import Utility from "../../utils";
 import OpenModal from "./components/openModal";
 import sessionManager from "../../managers/sessionManager";
@@ -32,7 +31,6 @@ const HomeComponent = ({state}) => {
 
     return (<>
         <CarouselComponent tagList={state.tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>
-        {/*<ViewTagList tagList={state.tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>*/}
         {filteredList?.length > 0 &&
         <ViewProductItemList productList={filteredList}
                              title={`Videos on ${Utility.capitalizeFirstLetterOfEveryWord(selectedTag)}`}

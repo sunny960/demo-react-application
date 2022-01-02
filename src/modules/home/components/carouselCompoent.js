@@ -114,10 +114,10 @@ const CarouselComponent = ({tagList, selectedTag, updateSelectedTag}) => {
                 </div>
             </div>
             <LeftSliderIcon href="#demo" data-slide="prev">
-                <img src={'/images/left_arrow.svg'}/>
+                <img src={'/images/left_arrow.svg'} alt={'left_arrow'}/>
             </LeftSliderIcon>
             <RightSliderIcon href="#demo" data-slide="next">
-                <img src={'/images/right_arrow.svg'}/>
+                <img src={'/images/right_arrow.svg'} alt={'right_arrow'}/>
             </RightSliderIcon>
         </div>
         <HeaderWrapper>

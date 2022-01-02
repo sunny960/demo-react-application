@@ -63,7 +63,7 @@ const Icon = styled.img`
 const ProductItem = ({product, setSelectedProductItem, openModal, isOpen}) => {
     function addInFavouriteList(product) {
         let list = sessionManager.getDataFromLocalStorage(sessionConstants.FAVOURITE_LIST) || []
-        sessionManager.setDataInLocalStorage(product && [...list, product] || [], sessionConstants.FAVOURITE_LIST);
+        sessionManager.setDataInLocalStorage((product && [...list, product]) || [], sessionConstants.FAVOURITE_LIST);
         Utility.apiSuccessToast('This video has been saved to favourites list successfully')
     }
 

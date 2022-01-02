@@ -351,7 +351,7 @@ function getYearsList(addedOn = new Date().getTime()) {
 function epocToPrettyTime(seconds) {
     seconds = Math.floor(seconds);
     //to convert to integer if seconds is String.
-    var nowTimeMilliseconds = (new Date).getTime();
+    var nowTimeMilliseconds = new Date().getTime();
     var date = new Date(seconds);
     var dateObject = moment(date).format('DD MMM YYYY');
     //var dateObject = moment(date).format('ddd, MMM DD hh:mm A');
@@ -381,7 +381,7 @@ function epocToPrettyTime(seconds) {
 
 function epocToPrettyTimeForFuture(seconds) {
     seconds = Math.floor(seconds);//to convert to integer if seconds is String.
-    var nowTimeMilliseconds = (new Date).getTime();
+    var nowTimeMilliseconds = new Date().getTime();
     var date = new Date(seconds);
     var dateObject = moment(date).format('DD MMMM YYYY');
     //var dateObject = moment(date).format('ddd, MMM DD hh:mm A');
