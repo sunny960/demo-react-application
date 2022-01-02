@@ -92,8 +92,8 @@ const Button = styled.button`
   color: #FFFFFF;
   background: rgba(6, 139, 236, 0.6);
   backdrop-filter: blur(54px);
-  border-color: rgba(6, 139, 236, 0.6);
   border-radius: 10px;
+  border: none;
 
   margin-top: 42px;
 `
