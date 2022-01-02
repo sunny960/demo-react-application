@@ -5,6 +5,7 @@ import Utility from "../../utils";
 import OpenModal from "./components/openModal";
 import sessionManager from "../../managers/sessionManager";
 import {sessionConstants} from "../../constants";
+import CarouselComponent from "./components/carouselCompoent";
 
 const HomeComponent = ({state}) => {
     const [selectedTag, setSelectedTag] = useState('')
@@ -30,7 +31,8 @@ const HomeComponent = ({state}) => {
     }
 
     return (<>
-        <ViewTagList tagList={state.tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>
+        <CarouselComponent tagList={state.tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>
+        {/*<ViewTagList tagList={state.tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>*/}
         {filteredList?.length > 0 &&
         <ViewProductItemList productList={filteredList}
                              title={`Videos on ${Utility.capitalizeFirstLetterOfEveryWord(selectedTag)}`}

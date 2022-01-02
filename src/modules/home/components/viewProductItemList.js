@@ -20,7 +20,8 @@ const TitleRow = styled(Row)`
   display: flex;
   align-items: center;
   color: #005188;
-  padding: 32px 40px;
+  padding: 0 40px 32px 40px;
+  //padding: 32px 40px;
 `
 const ProductContainer = styled(Row)`
   flex-wrap: wrap;
