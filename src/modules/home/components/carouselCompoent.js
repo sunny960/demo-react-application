@@ -75,6 +75,7 @@ const DownArrowIcon = styled.img`
 const Text = styled.span`
   font-family: Montserrat;
   font-style: normal;
+  font-weight: bold;
   font-size: 35px;
   line-height: 117.8%;
   max-width: 480px;
