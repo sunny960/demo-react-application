@@ -9,31 +9,43 @@ const Column = styled.div`
   flex-direction: column;
 `
 
+const Description = styled.span`
+  display: none;
+  font-family: Roboto;
+  font-size: 10.8031px;
+  line-height: 13px;
+  align-items: center;
+  color: #FFFFFF;
+  padding-top: 10px;
+`
 const ImageContainer = styled(Column)`
   position: relative;
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) -10.09%, rgba(0, 0, 0, 0.15) 42.08%);
+  background: url(${({image}) => image});
   border-radius: 7.78266px;
   cursor: pointer;
 
-`
-const AdvertiseImage = styled.img`
   width: 276.39px;
   height: 172.57px;
-  border-radius: 7.78266px;
+  background-size: 276.39px 172.57px;
   overflow: hidden;
-  transition: 1.5s;
+  transition: 1.0s;
 
   &:hover {
-    width: 342.24px;
-    height: 213.68px;
+    z-index: 1000;
+    transform: scale(1.23,1.1);
+    ${Description} {
+      display: block;
+    }
   }
+
+
 `
-const TextContainer = styled.span`
+const TextContainer = styled.div`
   position: absolute;
-  top: 119px;
+  bottom: 15px;
   left: 17px;
 `
-const Text = styled.span`
+const Text = styled.div`
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -42,15 +54,6 @@ const Text = styled.span`
   display: flex;
   align-items: center;
   color: #FFFFFF;
-`
-const Description = styled.span`
-  font-family: Roboto;
-  font-size: 10.8031px;
-  line-height: 13px;
-  display: flex;
-  align-items: center;
-  color: #FFFFFF;
-  padding-top: 13px;
 `
 const Icon = styled.img`
   width: 18px;
@@ -68,13 +71,12 @@ const ProductItem = ({product, setSelectedProductItem, openModal, isOpen}) => {
     }
 
     return (<>
-        <ImageContainer>
+        <ImageContainer image={product?.thumbnailUrl || ''}>
             <Icon src={'/images/heart_icon.svg'} onClick={() => addInFavouriteList(product)}/>
-            <AdvertiseImage src={product?.thumbnailUrl || ''} onClick={() => {
+            <TextContainer onClick={() => {
                 openModal(!isOpen)
                 setSelectedProductItem(product)
-            }}/>
-            <TextContainer>
+            }}>
                 <Text>{product?.title || ''}</Text>
                 <Description>{product?.description || ''}</Description>
             </TextContainer>
