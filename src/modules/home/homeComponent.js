@@ -2,28 +2,26 @@ import React, {useEffect, useState} from "react";
 import ViewProductItemList from "./components/viewProductItemList";
 import Utility from "../../utils";
 import OpenModal from "./components/openModal";
-import sessionManager from "../../managers/sessionManager";
-import {sessionConstants} from "../../constants";
 import CarouselComponent from "./components/carouselCompoent";
+import {useSelector} from "react-redux";
 
 const HomeComponent = ({state}) => {
     const [selectedTag, setSelectedTag] = useState('')
     const [filteredList, setFilteredList] = useState([])
     const [selectedProductItem, setSelectedProductItem] = useState(null)
     const [isOpen, openModal] = useState(false)
+    const favouriteVideoList = useSelector((state)=>state.video.favouriteVideoList)
     useEffect(() => {
-        let list = sessionManager.getDataFromLocalStorage(sessionConstants.FAVOURITE_LIST) || []
-        if (list && list.length > 0) {
+        if (favouriteVideoList && favouriteVideoList.length > 0) {
             setSelectedTag('Favourites')
-            setFilteredList(list)
+            setFilteredList(favouriteVideoList)
         }
-    }, [])
+    }, [favouriteVideoList])
 
     function updateSelectedTag(tag = '') {
         setSelectedTag(tag)
         if (tag === 'Favourites') {
-            let list = sessionManager.getDataFromLocalStorage(sessionConstants.FAVOURITE_LIST) || []
-            setFilteredList(list)
+            setFilteredList(favouriteVideoList)
         } else
             setFilteredList(state.indexedProductList[tag]);
 

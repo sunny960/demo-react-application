@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import sessionManager from "../../../managers/sessionManager";
-import {sessionConstants} from "../../../constants";
+import {eventConstants} from "../../../constants";
 import Utility from "../../../utils";
+import {useDispatch} from "react-redux";
 
 const Column = styled.div`
   display: flex;
@@ -32,7 +32,8 @@ const ImageContainer = styled(Column)`
 
   &:hover {
     z-index: 1000;
-    transform: scale(1.23,1.1);
+    transform: scale(1.23, 1.1);
+
     ${Description} {
       display: block;
     }
@@ -64,9 +65,10 @@ const Icon = styled.img`
   right: 10px;
 `
 const ProductItem = ({product, setSelectedProductItem, openModal, isOpen}) => {
+    const dispatch = useDispatch();
+
     function addInFavouriteList(product) {
-        let list = sessionManager.getDataFromLocalStorage(sessionConstants.FAVOURITE_LIST) || []
-        sessionManager.setDataInLocalStorage((product && [...list, product]) || [], sessionConstants.FAVOURITE_LIST);
+        dispatch({type: eventConstants.ADD_FAVOURITE_VIDEO, data: product})
         Utility.apiSuccessToast('This video has been saved to favourites list successfully')
     }
 

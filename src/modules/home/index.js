@@ -26,7 +26,7 @@ class Home extends React.Component {
         console.log("error===", error)
         console.log("productList===", productList)
         if (error) {
-            this.setState({showLoader: true})
+            this.setState({showLoader: false})
             return Utility.apiFailureToast('Unable to fetch product list')
         }
         this.parseProductList(productList)

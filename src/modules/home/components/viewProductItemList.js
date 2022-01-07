@@ -34,10 +34,11 @@ const ViewProductItemList = ({isOpen, openModal, setSelectedProductItem, title, 
     return (<Container>
         <TitleRow>{title || 'All Videos'}</TitleRow>
         <ProductContainer>
-            {productList?.length && productList.map((product, index) => <ProductItem product={product}
-                                                                                     key={index} openModal={openModal}
-                                                                                     isOpen={isOpen}
-                                                                                     setSelectedProductItem={setSelectedProductItem}/>)}
+            {productList?.length > 0 && productList.map((product, index) => <ProductItem product={product}
+                                                                                         key={index}
+                                                                                         openModal={openModal}
+                                                                                         isOpen={isOpen}
+                                                                                         setSelectedProductItem={setSelectedProductItem}/>)}
         </ProductContainer>
 
     </Container>)

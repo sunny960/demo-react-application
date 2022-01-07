@@ -35,3 +35,6 @@ export const apiFailureConstants = {
 export const sessionConstants = {
     FAVOURITE_LIST: 'favouriteList'
 };
+export const eventConstants = {
+    ADD_FAVOURITE_VIDEO: 'ADD_FAVOURITE_VIDEO'
+};

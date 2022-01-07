@@ -13,21 +13,30 @@ const Column = styled.div`
 `
 const Wrapper = styled(Column)`
   position: relative;
+  background: url(${({image}) => image});
+  background-size: 100% 800px;
+  height: 700px;
+
+  #demo {
+    height: 100%;
+  }
+
 `
 const ContentWrapper = styled(Column)`
-  position: absolute;
-  top: 25%;
-  left: 15%;
+  max-width: 480px;
+  margin-left: 10%;
+  margin-top: 5%;
 `
 const TagWrapper = styled(Column)`
   position: absolute;
   bottom: 15%;
   z-index: 100;
+  width: 100%;
+  margin: auto;
 `
 const HeaderWrapper = styled(Row)`
   justify-content: space-between;
   padding: 0 34px 0 31px;
-  position: absolute;
   width: 100%;
   z-index: 100;
 `
@@ -35,19 +44,14 @@ const HeaderRightWrapper = styled(Row)`
   margin-top: 20px;
 
 `
-const BgImage = styled.img`
-  width: 100%;
-  height: 650px;
-`
 const LeftSliderIcon = styled.a`
   position: absolute;
-  top: 0;
-  bottom: 30%;
+  top: 28%;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 5%;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -98,19 +102,24 @@ const Button = styled.button`
   margin-top: 42px;
 `
 const CarouselComponent = ({tagList, selectedTag, updateSelectedTag}) => {
-    return (<Wrapper>
+    return (<Wrapper image={'/images/carousel_img.png'}>
+        <HeaderWrapper>
+            <LogoIcon src={'/images/logo.png'}/>
+            <HeaderRightWrapper>
+                <BellIcon src={'/images/bell_icon.svg'}/>
+                <ProfileIcon src={'/images/profile.svg'}/>
+                <DownArrowIcon src={'/images/down_arrow.svg'}/>
+            </HeaderRightWrapper>
+        </HeaderWrapper>
         <div id="demo" className="carousel slide">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <BgImage src={'/images/carousel_img.png'} alt="Los Angeles"/>
                     <TextComponent/>
                 </div>
                 <div className="carousel-item">
-                    <BgImage src={'/images/carousel_img.png'} alt="Chicago"/>
                     <TextComponent/>
                 </div>
                 <div className="carousel-item">
-                    <BgImage src={'/images/carousel_img.png'} alt="New York"/>
                     <TextComponent/>
                 </div>
             </div>
@@ -121,14 +130,6 @@ const CarouselComponent = ({tagList, selectedTag, updateSelectedTag}) => {
                 <img src={'/images/right_arrow.svg'} alt={'right_arrow'}/>
             </RightSliderIcon>
         </div>
-        <HeaderWrapper>
-            <LogoIcon src={'/images/logo.png'}/>
-            <HeaderRightWrapper>
-                <BellIcon src={'/images/bell_icon.svg'}/>
-                <ProfileIcon src={'/images/profile.svg'}/>
-                <DownArrowIcon src={'/images/down_arrow.svg'}/>
-            </HeaderRightWrapper>
-        </HeaderWrapper>
         <TagWrapper>
             <ViewTagList tagList={tagList} selectedTag={selectedTag} updateSelectedTag={updateSelectedTag}/>
         </TagWrapper>

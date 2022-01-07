@@ -46,7 +46,7 @@ const ViewTagList = ({tagList, selectedTag, updateSelectedTag}) => {
         <Text>{'Tags:'}</Text>
         <ButtonContainer isSelected={selectedTag === 'Favourites'}
                          onClick={() => updateSelectedTag('Favourites')}>{'Favourites'}</ButtonContainer>
-        {tagList?.length && tagList.map((tag, index) => <ButtonContainer
+        {tagList?.length>0 && tagList.map((tag, index) => <ButtonContainer
             isSelected={selectedTag === tag} key={index}
             onClick={() => updateSelectedTag(tag)}>{Utility.capitalizeFirstLetterOfEveryWord(tag)}</ButtonContainer>
         )}

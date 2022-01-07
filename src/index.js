@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Routes from './App';
 import * as serviceWorker from './serviceWorker';
+import {Provider} from 'react-redux';
+import store from './store.js';
+
+
 
 function DemoWebApp() {
     return (
-        <div>
+        <Provider store={store}>
             <Routes/>
-        </div>
+        </Provider>
     );
 }
 
