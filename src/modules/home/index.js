@@ -9,47 +9,29 @@ class Home extends React.Component {
         super(props);
         this.state = {
             showLoader: true,
-            tagList: [],
             productList: [],
-            filteredProductList: [],
-            indexedProductList: {},
+            limit:10,
+            skip:0
         };
     }
 
     componentDidMount() {
-        this.getProductItemList()
-        setTimeout(() => this.setState({showLoader: false}), 3000)
+        this.getProductItemList(10,0)
     }
 
-    getProductItemList = async () => {
-        let [error, productList] = await Utility.parseResponse(ProductService.getAllProductItems())
-        console.log("error===", error)
-        console.log("productList===", productList)
-        if (error) {
+    getProductItemList = async (limit=this.state.limit,skip=this.state.skip) => {
+        let [error, productList] = await Utility.parseResponse(ProductService.getAllProductItems({limit,skip}))
+        if (error || !productList) {
             this.setState({showLoader: false})
             return Utility.apiFailureToast('Unable to fetch product list')
         }
-        this.parseProductList(productList)
-    }
-    parseProductList = (productList = []) => {
-        let tagList = []
-        productList.forEach((product) => {
-            if (product?.tags?.length > 0)
-                tagList = [...tagList, ...product?.tags]
-        })
-        tagList = new Set(tagList)
-        let indexedProductList = {}
-        tagList.forEach((tag) => {
-            indexedProductList[tag] = productList.filter((product) => product.tags.indexOf(tag) !== -1)
-        })
-        this.setState({tagList : Array.from(tagList), productList, indexedProductList, showLoader: false});
+        this.setState({productList, showLoader: false})
     }
 
     render() {
         return (
             <>
-                {this.state.showLoader && <Loader/>}
-                {!this.state.showLoader && <HomeComponent state={this.state}/>}
+                {this.state.showLoader? <Loader/>: <HomeComponent state={this.state}/>}
             </>
         )
     }

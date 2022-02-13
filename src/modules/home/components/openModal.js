@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import Modal from "@material-ui/core/Modal";
 import Utility from "../../../utils";
@@ -23,17 +23,17 @@ const Container = styled(Column)`
   top: 40%;
   left: 43%;
   transform: translate(-43%, -40%);
+  padding: 10px 57px;
 `
 
-const Player = styled.iframe`
+const Image = styled.img`
   display: block;
   width: 100%;
-  height: 400px;
+  height: 250px;
 `
 
 const TextContainer = styled(Column)`
-  padding: 10px 57px;
-
+  margin-top: 10px;
 `
 const Text = styled.span`
   font-family: Montserrat;
@@ -43,6 +43,7 @@ const Text = styled.span`
   align-items: center;
   color: #005188;
   max-width: 428px;
+  padding: 15px 0;
 `
 const Description = styled.span`
   font-family: Montserrat;
@@ -53,10 +54,13 @@ const Description = styled.span`
   padding-bottom: 12px;
   max-width: 486px;
 `
-const TagWrapper = styled(Row)`
-  flex-wrap: wrap;
-  padding: 10px 0;
-  grid-gap: 24px 27px;
+const PriceText = styled.span`
+  font-family: Montserrat;
+  font-size: 20px;
+  line-height: 22px;
+  align-items: center;
+  color: #000000;
+  text-decoration: ${({discount}) => discount ? 'line-through' : 'none'};
 `
 
 const ButtonContainer = styled.button`
@@ -66,12 +70,12 @@ const ButtonContainer = styled.button`
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  color: #005188;
+  background: #005188;
+  color: #FFFFFF;
 
-  border: 1px solid #A6A6A6;
+  border: 1px solid #005188;
   box-sizing: border-box;
   border-radius: 9px;
-  background: transparent
 `
 const CloseIcon = styled.img`
   width: 34px;
@@ -80,7 +84,56 @@ const CloseIcon = styled.img`
   position: absolute;
   right: -40px;
 `
+
+const Wrapper = styled(Row)`
+  gap: 30px;
+  align-items: center;
+`
+const ImageWrapper = styled(Column)`
+  width: 300px;
+`
+const Input = styled.input`
+  width: 225px;
+  font-size: 12px;
+  color: #282d32;
+  border: 1px solid #005188;
+  box-sizing: border-box;
+  border-radius: 9px;
+  height: 34px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: 10px;
+
+`
+const ApplyBtn = styled(ButtonContainer)`
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+`
+const DiscountWrapper = styled(Row)`
+  padding: 15px 0;
+  width: 100%;
+  justify-content: flex-end;
+`
+const BtnWrapper = styled(Row)`
+  padding: 15px 0;
+  width: 100%;
+  justify-content: flex-end;
+`
 const OpenModal = ({isOpen, openModal, selectedProductItem}) => {
+    const [discountCode, setDiscountCode] = useState('')
+    const [discountedPrice, setDiscountedPrice] = useState(0)
+
+    function inputFieldHandler(event) {
+        setDiscountCode(event.target.value)
+        setDiscountedPrice(0)
+    }
+
+    function applyBtnHandler() {
+        if (!discountCode)
+            return
+        setDiscountedPrice(parseFloat((selectedProductItem.price * 95) / 100))
+    }
 
     return (
         <div>
@@ -92,16 +145,29 @@ const OpenModal = ({isOpen, openModal, selectedProductItem}) => {
             >
                 <Container>
                     <CloseIcon src={'/images/close_icon.png'} onClick={() => openModal(!isOpen)}/>
-                    <Player src={selectedProductItem.videolink} allow="autoplay; fullscreen;"
-                            frameBorder="0"/>
-                    <TextContainer>
-                        <Text>{selectedProductItem?.title || ''}</Text>
-                        <TagWrapper>
-                            {selectedProductItem.tags?.length && selectedProductItem.tags.map((tag, index) =>
+                    <Wrapper>
+                        <ImageWrapper>
+                            <Image src={selectedProductItem.image}/>
+                        </ImageWrapper>
+                        <Column>
+                            <Text>{selectedProductItem?.title || ''}</Text>
+                            <PriceText discount={discountedPrice}>{`$${selectedProductItem.price || '0'}`}</PriceText>
+                            {discountedPrice > 0 && <PriceText>{`$${discountedPrice || '0'}`}</PriceText>}
+
+                            <DiscountWrapper>
+                                <Input name={'discountCode'} placeholder={'Enter discount code'} value={discountCode}
+                                       onChange={inputFieldHandler}/>
+                                <ApplyBtn onClick={applyBtnHandler}>{'Apply'}</ApplyBtn>
+                            </DiscountWrapper>
+                            <BtnWrapper>
                                 <ButtonContainer
-                                    key={index}>{Utility.capitalizeFirstLetterOfEveryWord(tag)}</ButtonContainer>
-                            )}
-                        </TagWrapper>
+                                    onClick={() => Utility.showUnderDevelopment()}>{'Buy Now'}</ButtonContainer>
+                            </BtnWrapper>
+                        </Column>
+
+                    </Wrapper>
+
+                    <TextContainer>
                         <Description>{selectedProductItem?.description || ''}</Description>
                     </TextContainer>
                 </Container>
