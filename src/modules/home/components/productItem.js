@@ -8,7 +8,7 @@ const Column = styled.div`
 
 const Description = styled.span`
   font-family: Roboto;
-  font-size: 10.8031px;
+  font-size: 11.8031px;
   line-height: 13px;
   align-items: center;
   color: #111010;
@@ -33,8 +33,8 @@ const Text = styled.div`
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 10px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 15px;
   display: flex;
   align-items: center;
   color: #005188;
