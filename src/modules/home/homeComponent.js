@@ -3,13 +3,13 @@ import ViewProductItemList from "./components/viewProductItemList";
 import OpenModal from "./components/openModal";
 import Header from "../header/headerComponent";
 
-const HomeComponent = ({state}) => {
+const HomeComponent = ({productList}) => {
     const [selectedProductItem, setSelectedProductItem] = useState(null)
     const [isOpen, openModal] = useState(false)
 
     return (<>
         <Header/>
-        <ViewProductItemList productList={state.productList} openModal={openModal}
+        <ViewProductItemList productList={productList} openModal={openModal}
                                setSelectedProductItem={setSelectedProductItem}
                                isOpen={isOpen}/>
 

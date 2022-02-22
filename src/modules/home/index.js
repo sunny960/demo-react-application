@@ -1,40 +1,34 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import HomeComponent from "./homeComponent";
 import {Loader} from "../common/loader/loader";
 import {ProductService} from "../../services";
 import Utility from "../../utils";
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showLoader: true,
-            productList: [],
-            limit:10,
-            skip:0
-        };
-    }
+const Home = () => {
+    const [showLoader, setShowLoader] = useState(true)
+    const [productList, setProductList] = useState([])
+    const [limit, setLimit] = useState(10)
+    const [skip, setSkip] = useState(0)
 
-    componentDidMount() {
-        this.getProductItemList(10,0)
-    }
-
-    getProductItemList = async (limit=this.state.limit,skip=this.state.skip) => {
-        let [error, productList] = await Utility.parseResponse(ProductService.getAllProductItems({limit,skip}))
+    const getProductItemList = async (limit = limit, skip = skip) => {
+        let [error, productList] = await Utility.parseResponse(ProductService.getAllProductItems({limit, skip}))
         if (error || !productList) {
-            this.setState({showLoader: false})
+            setShowLoader(false)
             return Utility.apiFailureToast('Unable to fetch product list')
         }
-        this.setState({productList, showLoader: false})
+        setShowLoader(false)
+        setProductList(productList)
     }
 
-    render() {
-        return (
-            <>
-                {this.state.showLoader? <Loader/>: <HomeComponent state={this.state}/>}
-            </>
-        )
-    }
+    useEffect(() => {
+        getProductItemList(10, 0).then(r => console.log("result"))
+    }, [])
+
+    return (
+        <>
+            {showLoader ? <Loader/> : <HomeComponent productList={productList}/>}
+        </>
+    )
+
 }
-
 export default Home;
