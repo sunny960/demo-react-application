@@ -13,6 +13,7 @@ import Theme from './theme'
 class App extends Component {
 
     render() {
+        console.log("====================",process.env)
 
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
