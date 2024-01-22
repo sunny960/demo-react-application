@@ -1,0 +1,110 @@
+@import '../../../styles/variables.scss';
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(238 242 247);
+  padding: 15px 10px;
+  margin: 15px 0;
+}
+.title {
+  font-size: 15px;
+  font-weight: 500;
+}
+.pageInfo {
+  color: #7c7979;
+  font-weight: 500;
+}
+
+.filterFieldWrapper {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid#E7EBF2;
+  border-radius: 4px;
+  margin: 24px 0 32px 0;
+}
+
+.filterBtnContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.widthForDefaultQuestion {
+  width: 40%;
+}
+
+.widthForBooleanQuestion {
+  width: 19%;
+}
+.sectionHeading {
+  color: #182233;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.questionWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.questionRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.answerWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  width: 60%;
+}
+
+.questionText {
+  color: #182233;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  width: fit-content;
+}
+
+.answerText {
+  color: #182233;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.container {
+  padding-top: 34px;
+}
+.childAnswerTextContainer {
+  background: #f5f9fe;
+  border: 1px solid #e6ebf3;
+  border-radius: 12px;
+  padding: 4px 24px;
+}
+.childQuestionText {
+  color: #182233;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.childAnswerText {
+  color: #182233;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.nestedTypeSubQuestionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.fontWeight400 {
+  font-weight: 400;
+}

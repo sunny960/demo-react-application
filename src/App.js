@@ -8,6 +8,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {ThemeProvider} from 'styled-components'
 import Home from "./modules/home";
 import Theme from './theme'
+import SunnyComponent from "./modules/sunny";
+import NotFound from "./modules/notFound";
 
 
 class App extends Component {
@@ -20,7 +22,9 @@ class App extends Component {
                 <ThemeProvider theme={Theme}>
                     <Router history={history}>
                         <Switch>
-                            <Route exact path={'/'} component={Home}/>
+                            <Route exact path={'/deepak'} component={Home}/>
+                            <Route exact path={'/sunny'} component={SunnyComponent}/>
+                            <Route exact path={'/'} component={NotFound}/>
                             <Redirect exact from='*' to="/"/>
                         </Switch>
                     </Router>
