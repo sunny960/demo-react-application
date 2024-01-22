@@ -1,0 +1,27 @@
+.multiSelectClass {
+  width: 100%;
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 0;
+}
+.customCheckBoxClass {
+  width: 100%;
+  word-break: break-word;
+}
+
+.singleSelectClass {
+  width: 100%;
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 0;
+}
+
+.customInputClass {
+  width: 100%;
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 0;
+  input {
+    font-weight: 400 !important;
+  }
+}

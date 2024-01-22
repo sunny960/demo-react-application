@@ -1,0 +1,26 @@
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(238 242 247);
+  padding: 15px 10px;
+  margin-top: 15px;
+}
+.title {
+  font-size: 15px;
+  font-weight: 500;
+}
+.pageInfo {
+  color: #7c7979;
+  font-weight: 500;
+}
+
+.tableStatus {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: 500;
+}

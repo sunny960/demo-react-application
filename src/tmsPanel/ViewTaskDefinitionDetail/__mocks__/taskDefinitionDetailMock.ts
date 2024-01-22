@@ -1,0 +1,20 @@
+export const taskDefinitionDetailMockRes = {
+  taskDefinitionId: 329,
+  taskDefinitionName: 'diy_edc_order',
+  displayName: 'DIY Device Deployment for orders placed through P4B/Mall',
+  source: 'FSM',
+  teams: ['EDC Retail'],
+  inputSuccessCriteria: ['DIY EDC Order'],
+  incentivePoints: 0,
+  incentiveValue: 0,
+  maxAttempt: 40,
+  sla: 240,
+  skills: ['OE_SKILLSET'],
+  inventoryCheckApplicable: [],
+  additionalInfo: {
+    product: 'EDC',
+    zone_mapping_check: true,
+  },
+  status: 'ACTIVE',
+  actions: ['clone', 'delete', 'view', 'search', 'submit'],
+};
